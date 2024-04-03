@@ -45,4 +45,4 @@ $result = mysqli_query($mysqli, "SELECT * FROM inmuebles ORDER BY id DESC");
         ?>
     </table>
 </body>
-</html>
+</html> 
