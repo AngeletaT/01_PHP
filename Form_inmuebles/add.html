@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nuevo registro</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#fecha_publi').datepicker({
+                dateFormat: 'dd/mm/yy',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1900:2050',
+                onSelect: function (selectedDate) {
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+	<a href="index.php">Pagina de inicio</a>
+	<br/><br/>
+	<form action="add.php" method="post" name="form1">
+		<table width="25%" border="0">
+			<tr> 
+				Referencia Catastral: 
+				<input type="text" name="id_ref" value="">
+				<span class="error">* </span>
+  				<br></br>
+			</tr>
+			<tr> 
+				Descripcion: 
+				<input type="text" name="descripcion" value="">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr> 
+				Opcion:
+				<span class="error">* </span>
+				<br></br>
+				<input type="radio" name="opcion" value = "Casa">Casa
+				<input type="radio" name="opcion" value = "Piso">Piso
+				<input type="radio" name="opcion" value = "Local">Local  
+				<input type="radio" name="opcion" value = "Trastero">Trastero
+				<input type="radio" name="opcion" value = "Garaje">Garaje
+				<input type="radio" name="opcion" value = "Terreno">Terreno
+				<br></br>
+			</tr>
+			<tr>
+				Tipo:
+				<span class="error">* </span>
+				<br></br>
+				<select name = "tipo[]" size = "4">
+					<option value="Venta"> Venta</option>
+					<option value="Alquiler"> Alquiler</option>
+					<option value="Nueva"> Obra nueva</option>
+					<option value="Compartir"> Compartir</option>
+				</select>
+				<br></br>
+			</tr>
+			<tr>
+				Metros cuadrados:
+				<input type="number" name="m2" value="">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr>
+				Precio:
+				<input type="number" name="precio" value="">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr>
+				Habitaciones:
+				<input type="number" name="habs" value="">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr>
+				Banyos:
+				<input type="number" name="banys" value="">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr>
+				Ascensor:
+				<span class="error">* </span>
+				<br></br>
+				Si: <input type="checkbox" name="ascensor" value="si">
+				No: <input type="checkbox" name="ascensor" value="no">
+				<br></br>
+			</tr>
+			<tr>
+				Fecha de Publicacion: 
+				<input type="text" name="publicacion" id="fecha_publi">
+				<span class="error">* </span>
+				<br></br>
+			</tr>
+			<tr> 
+				<td></td>
+				<td><input type="submit" name="Submit" value="Guardar"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
